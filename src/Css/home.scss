@@ -45,7 +45,7 @@
   }
   .songMushoku{
     z-index: -111;
-    
+
   }
   
   @keyframes text-clip {
@@ -121,10 +121,11 @@
     grid-column: 2;
     margin-left: -2rem;
     opacity: 0.7;
-  
     animation: image-in 2s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
-  
-    
-  
-    
   }
+
+  @media (max-width:900px){
+    .title{
+      font-size: 4rem;
+    }
+}
