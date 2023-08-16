@@ -5,6 +5,7 @@ import Forest from "../assets/img/main.jpeg";
 import { useEffect, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
 import Mushoku from '../assets/song/mushoku.mp3'
+import Post from "../Components/Post";
 
 const Home = () => {
   const [colorTitle, setColorTitle] = useState("");
@@ -17,6 +18,7 @@ const Home = () => {
 
   return (
     <>
+    <main>
       <div className="containerHome">
         <ReactAudioPlayer src={Mushoku} 
         autoPlay 
@@ -39,6 +41,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Post/>
+    </main>
+      
     </>
   );
 };
