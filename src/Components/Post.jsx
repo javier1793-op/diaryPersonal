@@ -6,6 +6,7 @@ const Post = () => {
     <>
         <div className="containerPost">
           <img src={Postmain} alt="mainPost" className='mainPost' />
+          
         </div>
     </>
   )

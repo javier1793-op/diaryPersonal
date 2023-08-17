@@ -1,15 +1,20 @@
-
- 
-
-.containerHome{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 1;
-    position: relative;
-    
+.containerHome {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
 }
-.containerHome .backgroundMain{
+.containerHome::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12%;
+  background: linear-gradient(to top, #1c0522,transparent);
+  z-index: 1000;
+}
+.containerHome .backgroundMain {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
@@ -20,115 +25,139 @@
   bottom: 0;
   z-index: -1;
 }
-.containerHome .contentHome{
-    display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 3rem;
-    height: 80%;
-    
+.containerHome .contentHome {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 3rem;
+  height: 80%;
+}
+
+.btnexplore {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.7rem;
+  color: #fdfefe;
+  opacity: 0%;
+}
+.btnexplore.active {
+  opacity: 100%;
+  transition: 5s all ease;
 }
 
 //title
 
+.title {
+  padding-left: 1em;
+  font-size: 6vw;
+  font-weight: 550;
+  z-index: 2;
+  text-shadow: 0px 4px 4px #6cdde5;
+
+  // start
+
+  > .title-inner {
+    display: inline-block;
+  }
+}
+.songMushoku {
+  z-index: -111;
+}
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes outer-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes inner-left {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.cafe,
+.mozart {
+  animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.title-inner {
+  display: inline-block;
+  animation: inner-left 1s 1s ease both;
+}
+
+.cafe-inner {
+  display: inline-block;
+  color: #132c88;
+  animation: inner-left 1s 1s ease both,
+    text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.mozart-inner {
+  color: #132c88;
+  animation: text-clip 3s 3s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
 
 .title {
-    padding-left: 1em;
-    font-size: 6vw;
-    font-weight: 550;
-    z-index: 2;
-    text-shadow: 0px 4px 4px  #6cdde5 ;
-    
-    // start
-  
-    > .title-inner {
-      display: inline-block;
-    }
-  }
-  .songMushoku{
-    z-index: -111;
+  animation: outer-left 2s 1s ease both;
+}
+.titleWhite {
+  color: #fdfefe;
+  transition: 5s all;
+}
 
-  }
-  
-  @keyframes text-clip {
-    from {
-      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    }
-    to {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-  }
-  
-  @keyframes outer-left {
-    from {
-      transform: translateX(-50%);
-    }
-    to {
-      transform: none;
-    }
-  }
-  
-  @keyframes inner-left {
-    from {
-      transform: translateX(50%);
-    }
-    to {
-      transform: none;
-    }
-  }
-  
-  .cafe,
-  .mozart {
-    animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
-  }
-  
-  .title-inner {
+.cafe {
+  // start
+  > .cafe-inner {
     display: inline-block;
-    animation: inner-left 1s 1s ease both;
   }
-  
-  .cafe-inner {
-    display: inline-block;
-    color:#132c88;
-    animation: inner-left 1s 1s ease both,
-      text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
-  }
-  
-  .mozart-inner {
-     color:#132c88;
-    animation: text-clip 3s 3s cubic-bezier(0.5, 0, 0.1, 1) both;
-  }
-  
+}
+
+.mozart {
+  display: inline-block;
+}
+
+.image {
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: -2rem;
+  opacity: 0.7;
+  animation: image-in 2s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+}
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  font-weight: 600;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  color: #f1f1f1;
+}
+
+@media (max-width: 900px) {
   .title {
-    animation: outer-left 2s 1s ease both;
+    font-size: 4rem;
   }
-  .titleWhite{
-    color: #fdfefe;
-    transition: 5s all;
-  }
-  
-  .cafe {
-    // start
-    > .cafe-inner {
-      display: inline-block;
-    }
-  }
-  
-  .mozart {
-    display: inline-block;
-  }
-  
-  .image {
-    grid-row: 1;
-    grid-column: 2;
-    margin-left: -2rem;
-    opacity: 0.7;
-    animation: image-in 2s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
-  }
-
-  @media (max-width:900px){
-    .title{
-      font-size: 4rem;
-    }
 }
