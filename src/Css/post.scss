@@ -2,6 +2,7 @@
     width: 100%;
     height: 100vh;
     position: relative;
+    
 }
 .containerPost::before{
     content: '';
@@ -23,3 +24,115 @@
     bottom: 0;
     z-index: -1;
 }
+.containerPost .contentPost{
+    width: 100wh;
+    height: 100vh;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(auto-fill,minmax(5, 1fr));
+    grid-template-rows: minmax(5,auto);
+    padding: 2rem;
+    grid-auto-flow: dense;
+    color: aliceblue;
+    gap: 1rem;
+}
+.contentPost .box{
+    width: 15rem;
+    height: 8rem;
+}
+.contentPost .box:nth-child(1){
+    grid-column: span 5;
+    width: 100%;
+}
+.contentPost .box:nth-child(2){
+    grid-column: span 5;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+.contentPost .box:nth-child(3){
+    grid-column: span 2;
+    width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem 3rem;
+}
+.contentPost .box:nth-child(4){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 3rem;
+
+}
+
+.contentPost .box:nth-child(8){
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    padding: 1rem;
+}
+.contentPost .box:nth-child(10){
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    padding: 1rem;
+}
+
+//span button
+
+.chatBtn {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background-color: #a9855d ;
+    background-image: linear-gradient(147deg, #a9855d , #f3b182,#a9855d );
+    cursor: pointer;
+    padding-top: 3px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.164);
+    position: relative;
+    background-size: 300%;
+    background-position: left;
+    transition-duration: 1s;
+  }
+  .runeImg{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .tooltip {
+    position: absolute;
+    top: -40px;
+    opacity: 0;
+    background-color: rgb(255, 180, 82);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .5s;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+  }
+  
+  .chatBtn:hover .tooltip {
+    opacity: 1;
+    transition-duration: .5s;
+  }
+  
+  .chatBtn:hover {
+    background-position: right;
+    transition-duration: 1s;
+  }
+
+@media (max-width: 900px) {
+   
+  }
+  

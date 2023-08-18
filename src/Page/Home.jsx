@@ -45,7 +45,7 @@ const Home = () => {
                 </div>
                 <br />
                 <Link
-                  activeClass="active"
+                 
                   to="selector"
                   spy={true}
                   smooth={true}
