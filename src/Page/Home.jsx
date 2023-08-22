@@ -26,16 +26,19 @@ const Home = () => {
   
   }, []);
 
+
+
   return (
     <>
       <main>
         <div className="containerHome">
-          <ReactAudioPlayer
+        <ReactAudioPlayer
             src={Mushoku}
             autoPlay
             className="songMushoku"
             volume={0.3}
           />
+          
           <Fireflies />
           <Head />
           <img
