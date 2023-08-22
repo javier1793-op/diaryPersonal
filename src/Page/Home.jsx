@@ -1,5 +1,5 @@
-import { Link, animateScroll as scroll } from "react-scroll";
-import { useEffect, useState } from "react";
+import { Link  } from "react-scroll";
+import { useEffect, useState, useRef } from "react";
 import ReactAudioPlayer from "react-audio-player";
 
 import "../Css/home.scss";
@@ -14,11 +14,16 @@ const Home = () => {
   const [colorTitle, setColorTitle] = useState("");
   const [explore, setExplore] = useState("");
 
+  const start = useRef();
+  
+
   useEffect(() => {
     setTimeout(() => {
       setColorTitle("titleWhite");
       setExplore("active");
     }, 6000);
+
+  
   }, []);
 
   return (
@@ -33,7 +38,12 @@ const Home = () => {
           />
           <Fireflies />
           <Head />
-          <img src={Forest} alt="background-main" className="backgroundMain" />
+          <img
+            src={Forest}
+            alt="background-main"
+            className="backgroundMain"
+            ref={start}
+          />
           <div className="contentHome">
             <div className="title">
               <div className="title-inner">
@@ -45,12 +55,11 @@ const Home = () => {
                 </div>
                 <br />
                 <Link
-                 
                   to="selector"
                   spy={true}
                   smooth={true}
-                  offset={-120}
-                  duration={1100}
+                  offset={120}
+                  duration={3000}
                 >
                   <button className={`btnexplore ${explore}`}>Explore</button>
                 </Link>
@@ -58,7 +67,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <Post  />
+        <section className="postSection" id="selector">
+          <Post />
+        </section>
       </main>
     </>
   );
