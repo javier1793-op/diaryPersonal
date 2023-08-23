@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link} from "react-router-dom";
 import "../Css/post.scss";
 import Postmain from "../assets/img/main2.jpeg";
 import ciervo from "../assets/img/runes/ciervo.png";
@@ -27,7 +28,7 @@ const Post = () => {
               <div className="title-inner">
                
                 <div className="mozart titleAventure">
-                  <div className={`mozart-inner ${colorTitle}`}>choose your adventure</div>
+                  <div className={`mozart-inner ${colorTitle}`}>Choose your adventure</div>
                 </div>
                
               </div>
@@ -74,6 +75,7 @@ const Post = () => {
           </div>
 
           <div className="box">
+            <Link to='/diaryPersonal/list'>
             <div className="boxcontent">
               <div className="portal-frame">
                 <div className="portal">
@@ -84,6 +86,7 @@ const Post = () => {
               </span>
               </div>
             </div>
+            </Link>
           </div>
 
           <div className="box">
