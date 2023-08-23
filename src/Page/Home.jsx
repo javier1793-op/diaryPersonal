@@ -13,6 +13,7 @@ import Post from "../Components/Post";
 const Home = () => {
   const [colorTitle, setColorTitle] = useState("");
   const [explore, setExplore] = useState("");
+  const [song, setSong] = useState(false);
 
   const start = useRef();
   
@@ -27,20 +28,21 @@ const Home = () => {
   }, []);
 
 
-
+console.log(song)
   return (
     <>
       <main>
         <div className="containerHome">
         <ReactAudioPlayer
             src={Mushoku}
+            muted={song}
             autoPlay
             className="songMushoku"
             volume={0.3}
           />
           
           <Fireflies />
-          <Head />
+          <Head setSong={setSong} song={song}/>
           <img
             src={Forest}
             alt="background-main"
