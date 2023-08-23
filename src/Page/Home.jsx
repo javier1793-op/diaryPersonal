@@ -28,7 +28,6 @@ const Home = () => {
   }, []);
 
 
-console.log(song)
   return (
     <>
       <main>

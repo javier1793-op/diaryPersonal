@@ -1,9 +1,14 @@
 import '../Css/button.scss'
 
-const Button = ({name}) => {
+const Button = ({name,setOpen}) => {
+
+
+  const handleopen=()=>{
+    setOpen(true)
+  }
   return (
     <>
-      <button>
+      <button onClick={handleopen}>
         {name}
         <div className="icon-1">
           <svg
