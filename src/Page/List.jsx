@@ -2,6 +2,7 @@ import Button from "../Components/Button";
 import Refrexion from "../assets/img/zona/reflexion.jpeg";
 import "../Css/list.scss";
 import { useState } from "react";
+import Item from "../Components/Item";
 
 const List = () => {
   const [open, setOpen] = useState(false);
@@ -31,7 +32,20 @@ const List = () => {
         }
         {open &&
         <div className="contentTable">
-           <div className="contentItem">aca el listado</div>
+           <div className="contentItem">
+              <div className="search">
+                <input type="text" placeholder="Search" />
+              </div>
+              <div className="pizarra">
+                <span className="sign">Secret</span>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                
+              </div>
+           </div>
         </div>
         }
     </div>
