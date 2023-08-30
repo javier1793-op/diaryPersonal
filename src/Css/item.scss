@@ -1,6 +1,36 @@
 .containerItem{
     width: 100%;
     height: 6rem;
-    background: red;
+    padding: .5rem;
     border-radius: 10px;
+    border: 5px solid ;
+    border-image-source: url('../assets/img/texture/madera1.jpg');
+    border-image-slice: 20;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.containerItem .contentItemleft{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.containerItem .contentItemright{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerItem .titleItem{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #e4b28d;
+}
+.titleItem .leaf{
+    width: 1.5rem;
+    height: 1.5rem;
 }

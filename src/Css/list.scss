@@ -95,8 +95,10 @@
     position: relative;
     width: 90%;
     height: 85%;
-    border: 10px solid  #875e26 ;
     border-radius: 10px;
+    border: 10px solid ;
+    border-image-source: url('../assets/img/texture/madera1.jpg');
+    border-image-slice: 20;
     padding: 1.5rem 1rem;
     background:  #513e34 ;
     display: grid;
@@ -106,16 +108,30 @@
   .pizarra .sign{
     z-index: 1000;
     position: absolute;
-    top: -70px;
-    font-size: 2rem;
-    padding: .7rem 2rem;
-    border: 10px solid  #875e26 ;
-    border-radius: 10px;
-    background:  #513e34 ;
+  
+    top: -90px;
+    font-size: 1.5rem;
     color: #d9c5b6;
     text-transform: uppercase;
     font-weight: 600;
   }
+  .pizarra .pagination{
+    position: absolute;
+    bottom: -15px;
+    z-index: 1000;
+    left: 42%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: url('../assets/img/texture/madera1.jpg');
+    padding: .5rem;
+    font-weight: 560;
+    color: #eedfd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
 
 
   @media (max-width: 900px) {
@@ -123,6 +139,12 @@
   
       grid-template-columns: repeat(1,1fr);
       height: auto;
+    }
+    .pizarra .sign .cartel{
+      
+      width: 11rem;
+      height: 7rem;
+     
     }
   }
   

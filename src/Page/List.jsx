@@ -3,6 +3,8 @@ import Refrexion from "../assets/img/zona/reflexion.jpeg";
 import "../Css/list.scss";
 import { useState } from "react";
 import Item from "../Components/Item";
+import Cartel from '../assets/img/texture/cartel.png'
+import { FiChevronsRight,FiChevronsLeft } from "react-icons/fi";
 
 const List = () => {
   const [open, setOpen] = useState(false);
@@ -37,13 +39,17 @@ const List = () => {
                 <input type="text" placeholder="Search" />
               </div>
               <div className="pizarra">
-                <span className="sign">Secret</span>
+                <span className="sign">
+                  <img src={Cartel} alt="cartel"  className="cartel"/>
+                </span>
                 <Item/>
                 <Item/>
                 <Item/>
                 <Item/>
                 <Item/>
-                
+                <div className="pagination">
+                <FiChevronsLeft/> 1 ... 30 <FiChevronsRight/>
+                </div>
               </div>
            </div>
         </div>
