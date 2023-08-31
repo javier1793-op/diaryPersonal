@@ -6,12 +6,34 @@ import Item from "../Components/Item";
 import Cartel from '../assets/img/texture/cartel.png'
 import { FiChevronsRight,FiChevronsLeft } from "react-icons/fi";
 
+
+import Secret from "../assets/img/zona/reflexion.jpeg";
+
 const List = () => {
   const [open, setOpen] = useState(false);
 
+  const valores = window.location.search;
+  const urlParams = new URLSearchParams(valores);
+  var name = urlParams.get("world");
+
+  const world = [
+    {
+      title: "Secret",
+      description: "The biggest secrets are the ones that never come to light.",
+      image: { Secret },
+    },
+    {
+      title: "Poems",
+      description: "The biggest secrets are the ones that never come to light.",
+      image: { Secret },
+    },
+  ];
+  const result = world.filter((world) => world.title === name);
+  console.log(result)
+
   return (
     <div className="containerList">
-      <img src={Refrexion} alt="background-list" className="backgroundlist" />
+      <img src={result.image} alt="background-list" className="backgroundlist" />
       
         {!open &&
       <div className="contentList">
