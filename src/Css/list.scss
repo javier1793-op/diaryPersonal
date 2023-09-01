@@ -51,12 +51,24 @@
   .contentIntro{
     display: flex;
     flex-direction: column;
+    padding: 1rem;
     gap: 2rem;
   }
   .contentIntro .spanDescription{
-    padding: 0 5rem;
+    padding: .5rem;
     font-size: 2em;
-    animation: inner-left 1s 1s ease both;
+    animation: text-clip 3s 3s cubic-bezier(0.5, 0, 0.1, 1) both;
+    width: 60%;
+    background: #875e26;
+    border-radius: 10px;
+    margin-left: 4.5rem;
+  }
+  .spanDescription .boxspanDescription{
+    background: #f0b27a ;
+    inset: 10;
+    border-radius: 10px;
+    padding: .2rem;
+    color:  #f7f9f9;
   }
   .btnopenlist{
     width: 20rem;
@@ -64,7 +76,6 @@
   }
   .contentItem{
     width: 90%;
-    height: 80vh;
     color: aliceblue;
     display: flex;
     flex-direction: column;
@@ -73,6 +84,7 @@
     border-radius: 10px;
     background: transparent;
     backdrop-filter: blur(15px);
+    padding: 1rem 0;
   }
   .contentItem .search{
     width: 100%;
@@ -132,6 +144,31 @@
     gap: 1rem;
   }
 
+  .back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1001;
+    margin: 1rem;
+  }
+  .close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #875e26;
+    cursor: pointer;
+    background:#deab41;
+    border-radius: 5px;
+  }
+  .close:hover{
+    background: #be8a19;
+  }
 
 
   @media (max-width: 900px) {

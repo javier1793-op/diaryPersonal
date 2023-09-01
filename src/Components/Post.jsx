@@ -47,6 +47,7 @@ const Post = () => {
 
           {/**Memories */}
           <div className="box">
+            <Link to={`/diaryPersonal/list?world=Memories`}>
             <div className="boxcontent">
               <div className="portal-frame">
                 <div className="portal"></div>
@@ -56,10 +57,12 @@ const Post = () => {
                 </span>
               </div>
             </div>
+            </Link>
           </div>
 
           {/**Reflexion */}
           <div className="box">
+            <Link to={`/diaryPersonal/list?world=Reflexion`}>
             <div className="boxcontent">
               <div className="portal-frame">
                 <div className="portal"></div>
@@ -69,6 +72,7 @@ const Post = () => {
                 </span>
               </div>
             </div>
+            </Link>
           </div>
 
           <div className="box">
@@ -95,15 +99,17 @@ const Post = () => {
 
           {/**recent */}
           <div className="box">
+            <Link to={`/diaryPersonal/list?world=Present`}>
             <div className="boxcontent">
               <div className="portal-frame">
                 <div className="portal"></div>
                 <span className="chatBtn">
                   <img src={lobo} alt="runa" className="runeImg" />
-                  <span className="tooltip">Recent</span>
+                  <span className="tooltip">Present</span>
                 </span>
               </div>
             </div>
+            </Link>
           </div>
 
           <div className="box">
@@ -112,6 +118,7 @@ const Post = () => {
 
           {/**poems */}
           <div className="box">
+          <Link to={`/diaryPersonal/list?world=Poems`}>
             <div className="boxcontent">
               <div className="portal-frame">
                 <div className="portal"></div>
@@ -121,6 +128,7 @@ const Post = () => {
                 </span>
               </div>
             </div>
+            </Link>
           </div>
 
           <div className="box">
