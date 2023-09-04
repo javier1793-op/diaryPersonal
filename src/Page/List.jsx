@@ -3,7 +3,7 @@ import "../Css/list.scss";
 import { useState } from "react";
 import Item from "../Components/Item";
 import Cartel from "../assets/img/texture/cartel.png";
-import { FiChevronsRight, FiChevronsLeft,FiX } from "react-icons/fi";
+import { FiChevronsRight, FiChevronsLeft, FiX } from "react-icons/fi";
 
 import Secret from "../assets/img/zona/reflexion.jpeg";
 import Poems from "../assets/img/zona/poems.jpeg";
@@ -11,17 +11,21 @@ import Reflextion from "../assets/img/zona/reflextion.jpeg";
 import Memories from "../assets/img/zona/memories.jpeg";
 import Present from "../assets/img/zona/recient.jpg";
 import { Link } from "react-router-dom";
+import Modal from "../Components/Modal";
 
 const List = () => {
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+
+  console.log(openModal)
 
   const valores = window.location.search;
   const urlParams = new URLSearchParams(valores);
   var name = urlParams.get("world");
 
-   const handleopen=()=>{
-    setOpen(false)
-  }
+  const handleopen = () => {
+    setOpen(false);
+  };
 
   const world = [
     {
@@ -77,10 +81,8 @@ const List = () => {
               </div>
             </div>
             <span className={`spanDescription  `}>
-              <div className="boxspanDescription">
-                {result[0].description}
-              </div>
-              </span>
+              <div className="boxspanDescription">{result[0].description}</div>
+            </span>
             <div className="btnopenlist">
               <Button name={"Open list"} setOpen={setOpen} />
             </div>
@@ -90,9 +92,7 @@ const List = () => {
       {open && (
         <div className="contentTable">
           <div className="contentItem">
-          <FiX className="close"
-            onClick={handleopen}
-          />
+            <FiX className="close" onClick={handleopen} />
             <div className="search">
               <input type="text" placeholder="Search" />
             </div>
@@ -100,11 +100,11 @@ const List = () => {
               <span className="sign">
                 <img src={Cartel} alt="cartel" className="cartel" />
               </span>
-              <Item />
-              <Item />
-              <Item />
-              <Item />
-              <Item />
+              <Item setOpenModal={setOpenModal}/>
+              <Item setOpenModal={setOpenModal}/>
+              <Item setOpenModal={setOpenModal}/>
+              <Item setOpenModal={setOpenModal}/>
+              <Item setOpenModal={setOpenModal}/>
               <div className="pagination">
                 <FiChevronsLeft /> 1 ... 30 <FiChevronsRight />
               </div>
@@ -112,6 +112,7 @@ const List = () => {
           </div>
         </div>
       )}
+      {openModal && <Modal setOpenModal={setOpenModal}/>}
     </div>
   );
 };
