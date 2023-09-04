@@ -96,12 +96,15 @@
     justify-content: flex-end;
     align-items: center;
   }
+  .searchList{
+    width: 20%;
+  }
   .search input{
     background:  #513e34 ;
     border: 3px solid #875e26;
     padding: 5px;
     list-style: none;
-    color: aliceblue;
+    color:#eedfd4;
   }
   .contentItem .pizarra{
     position: relative;
@@ -129,7 +132,7 @@
   }
   .pizarra .pagination{
     position: absolute;
-    bottom: -15px;
+    bottom: -25px;
     z-index: 1000;
     left: 42%;
     font-size: 1.5rem;
@@ -169,6 +172,7 @@
   .close:hover{
     background: #be8a19;
   }
+ 
 
 
   @media (max-width: 900px) {
@@ -177,11 +181,18 @@
       grid-template-columns: repeat(1,1fr);
       height: auto;
     }
+    .pizarra .pagination{
+      left: 30%;
+    }
     .pizarra .sign .cartel{
       
       width: 11rem;
       height: 7rem;
      
+    }
+    .search .searchList{
+      width: 40%;
+      margin-left: 12rem;
     }
   }
   

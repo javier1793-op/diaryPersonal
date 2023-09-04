@@ -94,7 +94,7 @@ const List = () => {
           <div className="contentItem">
             <FiX className="close" onClick={handleopen} />
             <div className="search">
-              <input type="text" placeholder="Search" />
+              <input type="text" placeholder="Search" className="searchList" />
             </div>
             <div className="pizarra">
               <span className="sign">
