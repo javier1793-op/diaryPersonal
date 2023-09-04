@@ -1,13 +1,17 @@
 import { createPortal } from "react-dom";
 
+import Modal1 from '../assets/img/modal/modal1.jpg'
+
 import "../Css/modal.scss";
+import Fireflies from "./Fireflies";
 
 const Modal = ({ setOpenModal }) => {
   return createPortal(
     <div className="contentModal">
 
       <section className="imageModal">
-        <img src="" alt="imagen modal" />
+         <Fireflies />
+        <img src={Modal1} alt="imagen modal" className="imgModal" />
       </section>
 
       <section className="textModal">

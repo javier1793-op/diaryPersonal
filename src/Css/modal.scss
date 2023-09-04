@@ -1,47 +1,53 @@
+.contentModal {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  z-index: 2000;
+  border: 5px solid #5d6d7e;
+}
+.contentModal .imageModal {
+  position: relative;
+  width: 45%;
+  height: 100%;
+  border-radius: 15px 0px 0px 15px;
+}
+.imageModal .imgModal{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
 
-.contentModal{
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    bottom: 2rem;
-    right: 2rem;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    z-index: 2000;
+.contentModal .textModal {
+  position: relative;
+  background: #f8c404;
+  color: #fdfefe;
+  font-weight: 500;
+  width: 55%;
+  height: 100%;
+  border-radius: 0px 15px 15px 0px;
+  padding: 1rem;
 }
-.contentModal .imageModal{
-    position: relative;
-    background: red;
-    width: 45%;
-    height: 100%;
-    border-radius: 15px 0px 0px 15px;
-    padding: 1rem;
-}
-.contentModal .textModal{
-    position: relative;
-   background: blue;
-    width: 55%;
-    height: 100%;
-    border-radius: 0px 15px 15px 0px;
-    padding: 1rem;
-}
+
 @media (max-width: 900px) {
-    .contentModal{
-        display: flex;
-        flex-direction: column;
-    }
-    .contentModal .imageModal{
-        width: 100%;
-        height: 40vh;
-        border-radius: 15px 15px 0px 0px;
-    }
-    .contentModal .textModal{
-        width: 100%;
-        height: 60vh;
-        border-radius: 0px 0px 15px 15px;
-    }
+  .contentModal {
+    display: flex;
+    flex-direction: column;
   }
-  
+  .contentModal .imageModal {
+    width: 100%;
+    height: 40vh;
+    border-radius: 15px 15px 0px 0px;
+  }
+  .contentModal .textModal {
+    width: 100%;
+    height: 60vh;
+    border-radius: 0px 0px 15px 15px;
+  }
+}
