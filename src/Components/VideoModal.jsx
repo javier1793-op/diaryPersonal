@@ -6,6 +6,7 @@ const VideoModal = () => {
     <div className="containervideoModal">
       <ReactPlayer
           url={'https://www.youtube.com/watch?v=33PIIljnTPE'}
+         
           width='100%'
           height='100%'
         />
