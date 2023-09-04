@@ -30,8 +30,10 @@
 
 .contentModal .textModal {
   position: relative;
-  background:  #fad7a0 ;
-  color: #eaecee;
+  background:url('../assets/img/modal/bg-madera.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  color: #f7f9f9;
   font-weight: 500;
   width: 55%;
   height: 100%;
@@ -80,11 +82,11 @@
   cursor: pointer;
   font-weight: 700;
   text-transform: uppercase;
-  color: #5d6d7e;
+  color:   #2ecc71  ;
 }
 .submenuModal span:nth-child(2){
-  border-left: 2px solid #5d6d7e;
-  border-right: 2px solid #5d6d7e;
+  border-left: 2px solid  #2ecc71 ;
+  border-right: 2px solid  #2ecc71 ;
   padding: 0px 1rem;
 }
 .optinModel{
