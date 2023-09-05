@@ -1,0 +1,31 @@
+
+.containerAdmin{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+.contentFormAdmin{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: red;
+}
+.contentTableAdmin{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: blue;
+}
