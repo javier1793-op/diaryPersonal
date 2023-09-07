@@ -3,21 +3,14 @@ import Button from "./Button";
 import Song from "../assets/img/song.png";
 import Songtach from "../assets/img/songtach.png";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Head = ({ setSong, song }) => {
   const [active, setActive] = useState(false);
-  const [songicon, setSongicon] = useState(Song); 
-  const [tokenPage, setTokenPage] = useState('')
+  const [songicon, setSongicon] = useState(Song);
 
-   const tokenvalor = localStorage.getItem("token")
-    
- 
-  useEffect(() => {
-    setTokenPage(tokenvalor)
-  }, [])
-  
- 
+  var user = localStorage.getItem("token");
+  const history = useNavigate();
 
   const handleSong = () => {
     setSong(!song);
@@ -30,6 +23,11 @@ const Head = ({ setSong, song }) => {
     }
   };
 
+  const handleClose = () => {
+    localStorage.removeItem("token");
+    history("/diaryPersonal/login");
+  };
+
   return (
     <div className="containerHead">
       <div
@@ -38,22 +36,26 @@ const Head = ({ setSong, song }) => {
       >
         <img src={songicon} alt="Logotiposong" />
       </div>
+      {user != null && (
+        <div className="menuUser">
+          <Link to='/diaryPersonal/admin'>
+           <div className={`alert-box1 `}>
+          <p className="alert">POST</p>
+        </div>
+        </Link>
+           <div className={`alert-box1 `}>
+          <p className="alert">NOTES</p>
+        </div>
+        </div>
+      )}
       <div className="menu">
-
-      {tokenPage != null?
-      <Link to="/diaryPersonal/login">
-      <Button name={"Logout"} 
-        tokenPage={tokenPage}
-      />
-      </Link>
-      :
-      <Link to="/diaryPersonal/login">
-          <Button name={"Login"} />
-      </Link>
-      }
-        
-
-        
+        {user != null ? (
+          <button onClick={handleClose}>Logout</button>
+        ) : (
+          <Link to="/diaryPersonal/login">
+            <Button name={"Login"} />
+          </Link>
+        )}
       </div>
     </div>
   );

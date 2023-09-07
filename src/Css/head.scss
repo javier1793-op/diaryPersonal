@@ -25,3 +25,30 @@
     height: 100%;
     padding: 5px
 }
+.alert-box1{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11rem;
+    height: 6rem;
+    text-transform: capitalize;
+    color: #fff;
+    text-align: center;
+    transition: 1s all ease;
+    background: url('../assets/img/alert.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    cursor: pointer;;
+}
+.alert-box1 p{
+    position: absolute;
+    bottom: 33%;
+    left: 35%;
+    font-size: 1.1rem;
+    color:  #784212 ;
+    font-weight: 700;
+}
+.alert-box1:nth-child(2){
+    top: 11%;
+}
