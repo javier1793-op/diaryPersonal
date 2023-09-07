@@ -2,12 +2,22 @@ import "../Css/head.scss";
 import Button from "./Button";
 import Song from "../assets/img/song.png";
 import Songtach from "../assets/img/songtach.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Head = ({ setSong, song }) => {
   const [active, setActive] = useState(false);
-  const [songicon, setSongicon] = useState(Song);
+  const [songicon, setSongicon] = useState(Song); 
+  const [tokenPage, setTokenPage] = useState('')
+
+   const tokenvalor = localStorage.getItem("token")
+    
+ 
+  useEffect(() => {
+    setTokenPage(tokenvalor)
+  }, [])
+  
+ 
 
   const handleSong = () => {
     setSong(!song);
@@ -29,9 +39,21 @@ const Head = ({ setSong, song }) => {
         <img src={songicon} alt="Logotiposong" />
       </div>
       <div className="menu">
-        <Link to="/diaryPersonal/login">
+
+      {tokenPage != null?
+      <Link to="/diaryPersonal/login">
+      <Button name={"Logout"} 
+        tokenPage={tokenPage}
+      />
+      </Link>
+      :
+      <Link to="/diaryPersonal/login">
           <Button name={"Login"} />
-        </Link>
+      </Link>
+      }
+        
+
+        
       </div>
     </div>
   );

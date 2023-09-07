@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import '../Css/button.scss'
 
 const Button = ({name,setOpen}) => {
@@ -8,7 +9,9 @@ const Button = ({name,setOpen}) => {
   }
   return (
     <>
-      <button onClick={handleopen}>
+      <button 
+      onClick={handleopen}
+      >
         {name}
         <div className="icon-1">
           <svg

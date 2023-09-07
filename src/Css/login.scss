@@ -11,6 +11,33 @@
     background-position: center;
  
 }
+.containerLoginclose{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/img/close.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+.containerLoginclose .logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #784212;
+    color: #fff;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: 1s ;
+}
+.logout:hover{
+    transform: scale(1.1);
+}
 .form{
     width: 400px;
     height: auto;
