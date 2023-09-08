@@ -16,7 +16,6 @@
     justify-content: center;
     gap: 1rem;
     padding: 1rem;
-    background: red;
 }
 .contentTableAdmin{
     width: 60%;
@@ -28,4 +27,27 @@
     gap: 1rem;
     padding: 1rem;
     background: blue;
+}
+.formPost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+    border: 1px solid #aeb6bf;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.formPost .boxForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.boxForm input{
+    background: #e0e3e6;
+}
+.boxForm select{
+    padding: .5rem .6rem;
 }

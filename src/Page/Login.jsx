@@ -1,7 +1,7 @@
 import { Link, Navigate } from "react-router-dom";
 import "../Css/login.scss";
 
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import axios from "axios";
 
 const Login = () => {
