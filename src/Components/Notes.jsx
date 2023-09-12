@@ -1,22 +1,21 @@
 import { useEffect, useState } from "react";
-import * as React from "react";
 import "../Css/admin.scss";
-
 import axios from "axios";
 
-const Admin = () => {
-  const [dataPost, setDataPost] = useState([]);
+
+const Notes = () => {
+    const [dataNotes, setDataNotes] = useState([]);
   const [error, setError] = useState(false);
 
-  const urlApi = "https://serverkoppodiary.onrender.com/api/post";
+  const urlApi = "https://serverkoppodiary.onrender.com/api/notes";
   const key = new Date();
-  const tableHead = ["date", "title", "subtitle", "action"];
+  const tableHead = ["date", "title", "description", "action"];
 
   useEffect(() => {
     axios
       .get(urlApi)
       .then(function (response) {
-        setDataPost(response.data);
+        setDataNotes(response.data);
       })
       .catch(function (error) {
         setError(true);
@@ -30,7 +29,7 @@ const Admin = () => {
   return (
     <div className="containerAdmin">
       <div className="contentFormAdmin">
-        <h3>POST FORM</h3>
+        <h3>NOTES FORM</h3>
         <form className="formPost" onSubmit={handleSubmit}>
           <section className="leftForm">
             <div className="boxForm">
@@ -102,11 +101,11 @@ const Admin = () => {
               </tr>
             </thead>
             <tbody>
-              {dataPost.map((cell) => (
+              {dataNotes.map((cell) => (
                 <tr key={key}>
                   <td>{cell.date}</td>
                   <td>{cell.title}</td>
-                  <td>{cell.subtitle}</td>
+                  <td>{cell.description}</td>
                   <td>botones</td>
                 </tr>
               ))}
@@ -118,4 +117,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Notes
