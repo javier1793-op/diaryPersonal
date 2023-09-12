@@ -8,41 +8,60 @@
     padding: 1rem;
 }
 .contentFormAdmin{
-    width: 35%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1rem ;
+    
 }
 .contentTableAdmin{
-    width: 60%;
+    width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1rem ;
 }
 .formPost{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
     gap: .5rem;
     border: 1px solid #aeb6bf;
-    padding: 1rem;
+    padding: 1rem 0;
     border-radius: 10px;
+}
+.formPost .leftForm{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.formPost .rightForm{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .formPost .boxForm{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
+    width: 45%;
+}
+.checkbox{
+  width: 1rem;
+  height: 1rem;
 }
 
 .boxForm input{
@@ -54,18 +73,21 @@ table {
     border-collapse: collapse;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+     border: 1px solid #aeb6bf;
   }
   th,
   td {
     padding: 15px;
-    background-color:  #566573 ;
-    color: #fff;
+    color: #566573;
+     border: 1px solid #aeb6bf;
   }
   th {
     text-align: left;
+     border: 1px solid #aeb6bf;
   }
   thead th {
-    background-color:  #eb984e;
+    color: #fff;
+    background:   #b67e4e  ;
   }
   tbody tr:hover {
     background-color: rgba(255, 255, 255, 0.3);
@@ -82,4 +104,23 @@ table {
     bottom: -9999px;
     background-color: rgba(255, 255, 255, 0.2);
     z-index: -1;
+  }
+  .boxFormText{
+    width: 90%;
+  }
+  .textarea{
+    width: 100%;
+    height: 5rem;
+  }
+
+  @media (max-width: 900px) {
+    .formPost .boxForm{
+      width: 100%;
+  }
+    .formPost{
+      flex-direction: column;
+    }
+    .formPost .leftForm{
+      width: 100%;
+    }
   }

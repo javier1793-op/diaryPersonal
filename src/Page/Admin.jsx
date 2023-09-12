@@ -52,36 +52,40 @@ const Admin = () => {
       <div className="contentFormAdmin">
         <h3>POST FORM</h3>
         <form className="formPost" onSubmit={handleSubmit}>
+
+          <section className="leftForm">
           <div className="boxForm">
-            <h3>choose a world</h3>
+          <label htmlFor="worldselect">-Memories-</label>
+            <input type="checkbox" className="checkbox" id="memories" value="Memories"  />
+            <label htmlFor="worldselect">-Poems-</label>
+            <input type="checkbox"className="checkbox" id="poems" value="Poems"/>
           </div>
           <div className="boxForm">
-            <label htmlFor="worldselect">Memories</label>
-            <input type="checkbox" id="memories" value="Memories" />
-            <label htmlFor="worldselect">Poems</label>
-            <input type="checkbox" id="poems" value="Poems" />
-          </div>
-          <div className="boxForm">
-            <label htmlFor="worldselect">Reflexion</label>
-            <input type="checkbox" id="reflexion" value="Reflexion" />
-            <label htmlFor="worldselect">Secrets</label>
-            <input type="checkbox" id="secrets" value="Secrets" />
+            <label htmlFor="worldselect">-Reflexion-</label>
+            <input type="checkbox"className="checkbox" id="reflexion" value="Reflexion" />
+            <label htmlFor="worldselect">-Secrets-</label>
+            <input type="checkbox" className="checkbox" id="secrets" value="Secrets" />
           </div>
           <div className="boxForm">
             <input type="text" placeholder="title" required />
             <input type="text" placeholder="subtitle" required />
           </div>
-          <div className="boxForm">
-          <textarea name="postContent" rows={4} cols={40} required/>
-            
-          </div>
-          <div className="boxForm">
+            <div className="boxForm">
             <input type="text" placeholder="image-link" />
             <input type="text" placeholder="video-link" />
           </div>
-          <div className="boxForm">
+          <div className="boxFormText">
+          <textarea name="postContent" className="textarea" required placeholder="contentPost"/>
+            
+          </div>
+          </section>
+          <section className="rightForm">
+          <div className="boxFormbtn">
             <button>Submit</button>
           </div>
+          </section>
+         
+            
         </form>
       </div>
       <div className="contentTableAdmin">
