@@ -43,8 +43,11 @@ const Head = ({ setSong, song }) => {
           <p className="alert">POST</p>
         </div>
         </Link>
+            
            <div className={`alert-box1 `}>
+           <Link to='/diaryPersonal/notes'>
           <p className="alert">NOTES</p>
+          </Link>
         </div>
         </div>
       )}

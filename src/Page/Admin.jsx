@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import * as React from "react";
-import { useTable } from "react-table";
 import "../Css/admin.scss";
 
 import axios from "axios";
@@ -11,6 +9,8 @@ const Admin = () => {
   const [error , setError] = useState(false)
   
   const urlApi = "https://serverkoppodiary.onrender.com/api/post";
+  const key= new Date();
+  const tableHead=['Date','Title','Subtitle','Action']
 
   useEffect(() => {
     axios.get(urlApi)
@@ -23,24 +23,7 @@ const Admin = () => {
     })
   }, [])
   
-  const data= React.useMemo(()=> dataPost,[])
-  const columns = React.useMemo(()=>[
-    {
-      Header:'Date',
-      accesor:'date'
-    },
-    {
-      Header:'Title',
-      accesor:'title'
-    },
-    {
-      Header:'Sub Title',
-      accesor:'subtitle'
-    },
-  ],[])
-  console.log(data)
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
+ 
 
   const handleSubmit=(e)=>{
     e.preventDefault()
@@ -92,23 +75,21 @@ const Admin = () => {
         {error ?
         'Connection error with server'
        :
-         <table {...getTableProps()}>
+         <table>
           <thead>
-          {headerGroups.map((headerGroup) => (
-              <tr {...headerGroup.getHeaderGroupProps()}>
-                {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
-                    {column.render("Header")}
-                  </th>
-                ))}
-              </tr>
-            ))}
+                <tr>
+                  {tableHead.map(head=>(
+                    <th >
+                      {head}
+                    </th>
+                  ))}
+                </tr>
           </thead>
           <tbody>
           
            
-               {data.map(cell =>(
-                 <tr>
+               {dataPost?.map(cell =>(
+                 <tr key={key}>
                  <td>
                   {cell.date}
                  </td>
@@ -117,6 +98,9 @@ const Admin = () => {
                  </td>
                  <td>
                   {cell.subtitle}
+                 </td>
+                 <td>
+                  botones
                  </td>
                  </tr>
                  ))}

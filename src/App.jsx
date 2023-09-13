@@ -5,6 +5,7 @@ import Page404 from './Page/Page404'
 import List from './Page/List'
 import Login from './Page/Login'
 import Admin from './Page/Admin'
+import Notes from './Page/Notes'
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
       <Route path='diaryPersonal/list' element={<List/>}/>
       <Route path='diaryPersonal/login' element={<Login/>}/>
       <Route path='diaryPersonal/admin' element={<Admin/>}/>
+      <Route path='diaryPersonal/notes' element={<Notes/>}/>
       <Route path='diaryPersonal/*' element={<Page404/>}/>
      </Routes>
     </>
