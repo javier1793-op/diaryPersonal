@@ -124,6 +124,16 @@ const Admin = () => {
    
   }
 
+  const deletePost=(id)=>{
+    axios.delete(`https://serverkoppodiary.onrender.com/api/post/${id}`)
+  .then(response => {
+    console.log(response);
+    getPost();
+  })
+  .catch(error => {
+    console.error(error);
+  })
+  }
 
 
   return (
@@ -243,7 +253,11 @@ const Admin = () => {
                     <span className="btn-icon"
                     onClick={()=>{typeSend(2,cell._id, cell.title,cell.subtitle,cell.image, cell.video, cell.content, cell.category)}}
                     ><BiSolidEdit className="icon"/></span>
-                    <span className="btn-icon"> <BiTrash className="icon"/></span> 
+                    <span className="btn-icon"
+                     onClick={()=>{deletePost(cell._id)}}
+                    > 
+                   
+                    <BiTrash className="icon"/></span> 
                   </td>
                 </tr>
               ))}
