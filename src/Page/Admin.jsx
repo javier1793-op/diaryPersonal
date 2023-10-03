@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {BiSolidEdit,BiTrash } from "react-icons/bi";
+import {BiSolidEdit,BiTrash,BiShowAlt } from "react-icons/bi";
 import { show_alert } from "../Function/alert";
 
 import "../Css/admin.scss";
@@ -258,6 +258,11 @@ const Admin = () => {
                     > 
                    
                     <BiTrash className="icon"/></span> 
+                    <span className="btn-icon"
+                     onClick={()=>{}}
+                    > 
+                   
+                    <BiShowAlt className="icon"/></span> 
                   </td>
                 </tr>
               ))}

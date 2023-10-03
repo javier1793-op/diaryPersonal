@@ -1,4 +1,33 @@
-
+.containerNotPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.containerNotPage img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.containerNotPage .info404{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.info404 h1{
+    font-size: 8rem;
+    font-weight: 900;
+    color: bisque;
+}
+.info404 h2{
+    font-size: 3rem;
+    color:  #808b96 ;
+}
   
 
   
