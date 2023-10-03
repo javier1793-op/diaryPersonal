@@ -5,6 +5,7 @@ import { show_alert } from "../Function/alert";
 import "../Css/admin.scss";
 
 import axios from "axios";
+import ModalPost from "../Components/ModalPost";
 
 const Admin = () => {
 
@@ -22,6 +23,7 @@ const Admin = () => {
   const [dataPost, setDataPost] = useState([]);
   const [error, setError] = useState(false);
   const [bandera, setBandera] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const urlApi = "https://serverkoppodiary.onrender.com/api/post";
   const tableHead = ["Date", "Title", "Subtitle", "Action"];
@@ -135,6 +137,10 @@ const Admin = () => {
   })
   }
 
+  const handleModal=()=>{
+    setModal(true)
+  }
+console.log(modal)
 
   return (
     <div className="containerAdmin">
@@ -259,7 +265,7 @@ const Admin = () => {
                    
                     <BiTrash className="icon"/></span> 
                     <span className="btn-icon"
-                     onClick={()=>{}}
+                     onClick={handleModal}
                     > 
                    
                     <BiShowAlt className="icon"/></span> 
@@ -270,6 +276,8 @@ const Admin = () => {
           </table>
         )}
       </div>
+      {modal && <ModalPost setModal={setModal}/>}
+     
     </div>
   );
 };
