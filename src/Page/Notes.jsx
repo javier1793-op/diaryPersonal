@@ -2,17 +2,21 @@ import { useEffect, useState } from "react";
 
 
 import axios from "axios";
+import { show_alert } from "../Function/alert";
 
   
 const Notes = () => {
-    const [dataNote, setDataNote] = useState([])
+  const [dataNote, setDataNote] = useState([])
   const [error , setError] = useState(false)
-  
+  const [title, setTitle] = useState("")
+  const [description, setDescription] = useState("")
+
   const urlApi = "https://serverkoppodiary.onrender.com/api/notes";
   const key= new Date();
   const tableHead=['Date','Title','description','Action']
 
-  useEffect(() => {
+
+   const axiosGet= ()=>{
     axios.get(urlApi)
     .then(function(response){
       setDataNote(response.data)  
@@ -21,13 +25,46 @@ const Notes = () => {
     .catch(function(error){
       setError(true)
     })
+   }
+
+
+  
+
+  const axiosPost = ()=>{
+    let params={
+      date: new Date(),
+      title:title,
+      description:description,
+    }
+    axios.post(urlApi, params)
+    .then(function (response) {
+      console.log(response);
+      axiosGet()
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  }
+
+  useEffect(() => {
+    axiosGet()
+
   }, [])
   
+
  
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=(e)=>{{
     e.preventDefault()
-  }
+    if (title.trim() === "") return(
+      show_alert("Debe completar el campo title", "warning"));
+    
+    if (description.trim() === "") return(
+      show_alert("Debe completar el campo description", "warning"));
+    }
+    axiosPost()
+}
   return (
     <div className="containerAdmin">
     <div className="contentFormAdmin">
@@ -37,11 +74,11 @@ const Notes = () => {
         <section className="leftForm">
         
         <div className="boxForm">
-          <input type="text" placeholder="title" required />
+          <input type="text" placeholder="title" value={title} onChange={(e)=>{setTitle(e.target.value)}} />
         </div>
           
         <div className="boxFormText">
-        <textarea name="postContent" className="textarea" required placeholder="Description Notes"/>
+        <textarea name="postContent" className="textarea" value={description} onChange={(e)=>{setDescription(e.target.value)}} placeholder="Description Notes"/>
           
         </div>
         </section>
@@ -72,7 +109,7 @@ const Notes = () => {
         
          
              {dataNote?.map(cell =>(
-               <tr key={key}>
+               <tr>
                <td>
                 {cell.date}
                </td>
