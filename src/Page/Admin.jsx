@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {BiSolidEdit,BiTrash,BiShowAlt } from "react-icons/bi";
+import {BiSolidEdit,BiTrash,BiShowAlt,BiSearchAlt } from "react-icons/bi";
 import { show_alert } from "../Function/alert";
 
 import "../Css/admin.scss";
@@ -21,6 +21,7 @@ const Admin = () => {
   const [operation, setOperation] = useState(1);
   const [idPut, setIdPut] = useState('');
   const [dataPost, setDataPost] = useState([]);
+  const [postselect, setPostselect] = useState({});
   const [error, setError] = useState(false);
   const [bandera, setBandera] = useState(false);
   const [modal, setModal] = useState(false);
@@ -42,7 +43,7 @@ const Admin = () => {
 
   }
   
-  const typeSend=(op, id, title, subtitle, image, video, content, category)=>{
+  const typeSend=(op, id, title, subtitle, image, video, content)=>{
 
     if(op === 2){
       setTitle(title);
@@ -102,8 +103,8 @@ const Admin = () => {
     params
   )
   .then(function (response) {
-    console.log(response);
-     setBandera(!bandera)
+     setBandera(!bandera);
+      clean();
   })
   .catch(function (error) {
     console.log(error);
@@ -114,16 +115,22 @@ const Admin = () => {
       params
     )
     .then(function (response) {
-      console.log(response);
+      clean();
        setBandera(!bandera)
     })
     .catch(function (error) {
       console.log(error);
     });
    }
-   
-   
-   
+
+  }
+
+  const clean=()=>{
+    setTitle('')
+    setSubtitle('')
+    setContent('')
+    setVideo('')
+    setImage('')
   }
 
   const deletePost=(id)=>{
@@ -137,11 +144,20 @@ const Admin = () => {
   })
   }
 
-  const handleModal=()=>{
+  const handleModal=(title, subtitle, image, video, content, category)=>{
     setModal(true)
+    const select={
+      title:title,
+      subtitle:subtitle,
+      image:image,
+      video:video,
+      content:content,
+      category:category
+    }
+      setPostselect(select)
   }
-console.log(modal)
 
+ 
   return (
     <div className="containerAdmin">
       <div className="contentFormAdmin">
@@ -241,6 +257,19 @@ console.log(modal)
         {error ? (
           "Connection error with server"
         ) : (
+          <>
+         
+            <form className="formSearch" >
+          <input
+                type="text"
+                name="search"
+                placeholder="search"
+                className="inputsearch"
+              />
+              <button className="btn-searchpost" ><BiSearchAlt/></button>
+          </form>
+         
+          
           <table>
             <thead>
               <tr>
@@ -265,7 +294,7 @@ console.log(modal)
                    
                     <BiTrash className="icon"/></span> 
                     <span className="btn-icon"
-                     onClick={handleModal}
+                     onClick={()=>{handleModal(cell.title,cell.subtitle,cell.image, cell.video, cell.content, cell.category)}}
                     > 
                    
                     <BiShowAlt className="icon"/></span> 
@@ -274,9 +303,11 @@ console.log(modal)
               ))}
             </tbody>
           </table>
+          </>
+          
         )}
       </div>
-      {modal && <ModalPost setModal={setModal}/>}
+      {modal && <ModalPost setModal={setModal} Postselect={postselect}/>}
      
     </div>
   );
